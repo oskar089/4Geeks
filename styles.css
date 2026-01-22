@@ -1,15 +1,54 @@
+:root{
+    --bg-primary: #f3f4f6;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e5e7eb;
+
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-inverse: #ffffff;
+
+    --accent-color: #ef4444;
+    --accent-hover: #dc2626;
+
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+   
+    --toggle-bg: #e5e7eb;
+    --toggle-active: #0f172a;
+}
+
+body.dark-mode {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-inverse: #0f172a;
+    
+    --border-color: #334155;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    
+    --toggle-bg: #334155;
+}
+
 /* 1. RESET Y BASES*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f3f4f6; /* Gris muy suave de fondo*/
-    color: #333;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(var(--text-primary));
     line-height: 1.6;
+    transition:background-color 0.3s ease,color 0.3s ease ;
 }
 
 .container {
@@ -18,88 +57,213 @@ body {
     padding: 0 20px;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* 2. NAVBAR*/
+header{
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
 .navbar {
-    padding: 20px 0;
+    padding: 1.25rem 0;
 }
 
 .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.name-company h1 { font-size: 1.5rem; font-weight: bold; }
-.name-company h2 { font-size: 0.9rem; color: #d83a3a; }
+.name-company h1 { 
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.name-company h2 { 
+    font-size: 0.875rem; 
+    color: var(--accent-color);
+    font-weight: 400;
+}
 
 .menu {
     display: flex;
-    gap: 30px;
-}
-
-.menu h2 {
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.swicther {
-    background: #dddddd; /* Fondo gris claro del toggle */
-    padding: 2px;
-    border-radius: 25px;
-    display: flex;
-
+    gap: 2rem;
     align-items: center;
-    width: 60px;
-    height: 30px;
-    cursor: pointer;
+}
+
+.menu a {
+    font-size: 1rem;
+    font-weight: 500;
+    color:var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
     position: relative;
 }
 
-/* El sol con círculo oscuro y fondo amarillo */
+.menu a:hover{
+    color: var(--accent-color);
+}
+
+.menu a::after{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+.swicther {
+    background: var(--toggle-bg);
+    padding: 4px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    width: 65px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
 .bi-sun {
-    background: #0f172a; /* Círculo azul oscuro/negro */
-    color: #e2ff00;    /* Sol color amarillo neón/lima */
-    width: 26px;
-    height: 26px;
+    background: var(--toggle-active);
+    color: #fbbf24;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    z-index: 2;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .bi-sun{
+    transform: translateX(33px);
+    background: transparent;
+    color: #94a3b8;
 }
 
 .bi-moon-stars-fill {
     color: #94a3b8;
-    margin-left: auto;
-    margin-right: 8px;
+    position: absolute;
+    right: 8px;
     font-size: 12px;
+    transition: color 0.3s ease;
 }
 
-.content{
-    /* display: flex; */
-    height: 20rem;
-    background-color: orange;
-    flex-direction: column;
+.dark-mode .bi-moon-stars-fill{
+    color: #fbbf24;
 }
+
 .presentation{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 450px;
+    padding: 4rem 2rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                      url('https://images.unsplash.com/photo-1581464647110-26e129ce2d02?q=80&w=1170&auto=format&fit=crop');
-    height: 25em;
+    url('https://images.unsplash.com/photo-1581464647110-26e129ce2d02?q=80&w=1170&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin-top: 2rem;  
 }
 
-.description{
-    padding: 70px 70px;
-}
 .description p{
     color: white;
-    font-size:1.5em ;
-    font-weight: 900;
-    font-family: sans-serif;
+    font-size:1.2em ;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
 }
 
+.description p:nth-child(2){
+    font-size: 2.5rem;
+    font-size: 800;
+}
+
+.description p:nth-child(3){
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+.btn-presentation {
+    display: flex;            
+    gap: 1rem;                 
+    margin-top: 2rem;
+    flex-wrap: wrap;         
+}
+
+.btn-presentation button,
+.btn-mensaje button,
+.from-btn button {
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-mensaje button{
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-trabajo button:hover{
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-trabajo button{
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-trabajo button:hover{
+    background: white;
+    color: var(--text-primary);
+}
+
+.my-clients{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.clients h2{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.clients p{
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
