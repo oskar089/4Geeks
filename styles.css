@@ -267,3 +267,8 @@ header{
     color: var(--text-secondary);
     font-size: 1rem;
 }
+
+.icons-clients {
+    display: flex;
+    justify-content: center;
+}
