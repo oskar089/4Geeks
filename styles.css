@@ -46,7 +46,7 @@ body.dark-mode {
 body {
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--bg-primary);
-    color: var(var(--text-primary));
+    color: var(--text-primary);
     line-height: 1.6;
     transition:background-color 0.3s ease,color 0.3s ease ;
 }
@@ -179,7 +179,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-width: 450px;
+    min-height: 450px;
     padding: 4rem 2rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
     url('https://images.unsplash.com/photo-1581464647110-26e129ce2d02?q=80&w=1170&auto=format&fit=crop');
@@ -213,6 +213,11 @@ header{
     gap: 1rem;                 
     margin-top: 2rem;
     flex-wrap: wrap;         
+}
+
+.btn-mensaje{
+    display: flex;
+    justify-content: end;
 }
 
 .btn-presentation button,
@@ -271,4 +276,364 @@ header{
 .icons-clients {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.icons-clients > div{
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition:  all 0.3s ease;
+}
+
+.icons-clients > div:hover{
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: scale(1.1);
+}
+
+.my-jobs {
+    margin-top: 5rem;
+}
+
+.jobs{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.jobs h2{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.jobs p{
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn-jobs{
+    display: flex;
+    justify-content: centr;
+    gap: 7rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.btn-jobs button{
+    padding: 0.625rem 1.25rem;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-jobs .all button{
+    background-color: var(--accent-color);
+    color: white;
+    border: var(--accent-color);
+}
+
+.btn-jobs button:hover {
+    border-color: var(--accent-color);
+    color:var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.jobs1,
+.jobs2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.8rem;
+    margin-top: 3rem;
+}
+
+.jobs1 > div,
+.jobs2 > div{
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.jobs1 >div:hover,
+.jobs2 >div:hover{
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.jobs1 img,
+.jobs2 img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.jobs1 p,
+.jobs2 p{
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.jobs1 i,
+.jobs2 i{
+    position: absolute;
+    top: 15rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: opacity 0.3s ease;
+}
+
+.job1 > div:hover i,
+.jobs2 > div:hover i {
+    opacity: 1;
+}
+
+.about-me{
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: repeat(2. 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.about1, .about2{
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.about {
+    grid-column: span 2;
+    text-align: center;
+    padding: 2rem;
+}
+
+.about h2:first-child{
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.about h2:nth-child(2){
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about p{
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-contac {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.form-contac h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-contac p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.group input,
+.group textarea {
+    padding: 0.875rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease;
+}
+
+.group input:focus,
+.group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.from-btn {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.from-btn button {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.from-btn button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 6rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.social-networks h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-networks p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.btn-social-networks {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.btn-social-networks button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* Colores corporativos de cada red social */
+.btn-social-networks .youtube {
+    background-color: #ff0000;
+}
+
+.btn-social-networks .linkedin {
+    background-color: #0077b5;
+}
+
+.btn-social-networks .instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.btn-social-networks .tiktok {
+    background-color: #000000;
+}
+
+/* Efectos hover para cada red social */
+.btn-social-networks .youtube:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-social-networks .linkedin:hover {
+    background-color: #005885;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-social-networks .instagram:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-social-networks .tiktok:hover {
+    background-color: #1e393b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.legal-notice {
+    margin-top: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .presentation {
+        padding: 3rem 1.5rem;
+    }
+    
+    .description p:nth-child(2) {
+        font-size: 2rem;
+    }
+    
+    .about-me {
+        grid-template-columns: 1fr;
+    }
+    
+    .about {
+        grid-column: span 1;
+    }
+    
+    .icons-clients {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-presentation {
+        flex-direction: column;
+    }
+    
+    .btn-presentation button {
+        width: 100%;
+        justify-content: center;
+    }
 }
