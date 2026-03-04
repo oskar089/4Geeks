@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./assets/img/4geeks.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Rigo with Vanilla.js</title>
+
+    <!-- Fontawesome is our recomended library for icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class= "bg-success">
+    <!-- Write your HTML code here, you can delete everything withing the body tags -->
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div id="card" class="card shadow-lg" style="width: 250px; height: 380px; border-radius: 15px; background-color: white;">
+            <div class="p-2 px-3 text-start top-suit" style="font-size: 50px;"></div>
+            <div class="card-body d-flex justify-content-center align-items-center value" style="font-size: 100px;"></div>
+            <div class="p-2 px-3 text-end bottom-suit" style="font-size: 50px; transform: rotate(180deg);"></div>
+        </div>
+    </div>
+
+    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
+

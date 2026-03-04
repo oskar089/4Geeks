@@ -1,0 +1,54 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    background: white;
+}
+
+#card {
+    width: 250px;
+    height: 380px;
+    border-radius: 15px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.top-suit,
+.bottom-suit {
+    font-size: 60px;
+    line-height: 1;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.top-suit {
+    padding-left: 15px;
+    justify-content: flex-start;
+}
+
+.bottom-suit {
+    padding-right: 15px;
+    justify-content: flex-end;
+    transform: rotate(180deg);
+
+}
+
+
+.value {
+    font-size: 150px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-grow: 1;
+    text-align: center;
+}
